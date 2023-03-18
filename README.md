@@ -28,9 +28,11 @@ local vkeymap = lvim.builtin.which_key.vmappings
 推荐度：★★
 
 主页：https://github.com/nathom/filetype.nvim
+
 简介：
 - filetype.nvim对neovim的filetype进行了优化，可以使打开文件时识别文件类型的速度更快。
 -  在某些情况下，还可以修复由文件类型识别不正确导致的高亮不全问题。（如打开`.h`文件发现没有代码高亮）
+
 使用方式：在config.lua中配置好，然后打开文件。
 
 配置：
@@ -67,6 +69,7 @@ local vkeymap = lvim.builtin.which_key.vmappings
 简介：
 - trouble.nvim实现了trouble这种预览窗口类型（类似于quickfix, loclist），这种窗口的特点是切换项目时会将打开前的窗口实时预览到对应的位置上，退出trouble窗口时会回到原来的位置。
 - trouble.nvim可以让你快速查看你的工作区、文件中的LSP警告列表。
+
 使用方式：热键打开窗口
 
 配置：
@@ -102,6 +105,7 @@ LunarVim的默认`<leader>`键是`空格`
 - leap.nvim可以让你的光标快速在可视范围内跳转。
 - 你只需要按下引导键（自定义的第一个键），然后输入你想跳转到的地方的相邻2个字符，如有重复，输入最后一个提示字符即可。
 - 可以配合其它neovim快捷键一起使用，如"c", "d", "y"
+
 使用方式：见下面的快捷键介绍，也可以配合"c", "d", "y"等neovim原本的功能键一起使用。
 
 配置：
@@ -128,9 +132,11 @@ LunarVim的默认`<leader>`键是`空格`
 推荐度：★★★★★
 
 主页：https://github.com/ggandor/flit.nvim
+
 简介：
 - flit.nvim是leap.nvim同一个作者产出的，flit.nvim需要依赖于leap.nvim。
 - flit.nvim可以增强neovim的"f", "F", "t", "T"这几个键的功能，同样是一个光标跳转插件。
+
 使用方式：按"f", "F", "t", "T"，然后键入你想去的目标字符。如果本次没有到达你想去的目标，再次按下"f"或"t"，光标会跳到下一个目标。
 
 配置：
@@ -155,9 +161,11 @@ LunarVim的默认`<leader>`键是`空格`
 推荐度：★★★★
 
 主页：https://github.com/phaazon/hop.nvim
+
 简介：
 - hop.nvim与leap.nvim一样，同样是一款可视范围内光标跳转的插件。
 - 与leap.nvim不同，这款插件有更多功能，并且支持单字符的跳转。
+
 使用方式：以本配置为例，按"E"，然后键入可视范围内你想去的那个字符，最后输入1-2个提示字符就可以跳到目标位置了。
 注：配置中以注释的方式将其它一些函数屏蔽掉了，仅保留单字符跳转功能，作为leap.nvim的补充。如有需要可去掉注释符自行配置。
 
@@ -182,8 +190,10 @@ LunarVim的默认`<leader>`键是`空格`
 推荐度：★★★★
 
 主页：https://github.com/HiPhish/nvim-ts-rainbow2
+
 简介：
 - nvim-ts-rainbow2基于nvim-treesitter，将配对的括号进行彩色的标注，方便辨认。
+
 使用方式：配置即用
 
 配置：
@@ -204,9 +214,11 @@ lvim.builtin.treesitter.rainbow.enable = true
 推荐度：★★★
 
 主页：https://github.com/nvim-treesitter/nvim-treesitter-context
+
 简介：
 - nvim-treesitter-context是一款基于nvim-treesitter的上文文固定插件。
 - 它可以将当前函数的函数头固定在neovim界面的前几行，让你知道当前在编辑的是什么类、函数或方法。
+
 使用方式：配置即用
 
 配置：
@@ -236,7 +248,9 @@ lvim.builtin.treesitter.rainbow.enable = true
 推荐度：★★★
 
 主页：https://github.com/ThePrimeagen/harpoon
+
 简介：当前项目的文件收藏夹
+
 使用方式：快捷键使用
 - `<leader>ohh`：在Telescope中打开Harpoon收藏的文件
 - `<leader>oht`：打开Harpoon本身自带的收藏夹
@@ -276,8 +290,10 @@ keymap["ohd"] = { "<cmd>lua require('harpoon.mark').rm_file()<cr>", "Remove File
 推荐度：★★★★
 
 主页：https://github.com/JoosepAlviste/nvim-ts-context-commentstring
+
 简介：
 - 本插件基于nvim-treesitter，根据当前光标在文中的位置，配合Comment.nvim，自动选择合适的注释格式。
+
 使用方式：配置即用。
 
 配置：
@@ -293,7 +309,9 @@ keymap["ohd"] = { "<cmd>lua require('harpoon.mark').rm_file()<cr>", "Remove File
 推荐度：★★★★
 
 主页：https://github.com/rmagatti/goto-preview
+
 简介：本插件可以以浮动窗口的形式预览符号的定义、实现等信息。
+
 使用方式：光标定位到目标符号，快捷键使用
 - `gpd`：预览符号定义
 - `gpi`：预览符号实现
@@ -327,7 +345,9 @@ keymap["ohd"] = { "<cmd>lua require('harpoon.mark').rm_file()<cr>", "Remove File
 推荐度：★★★★★
 
 主页：https://github.com/ethanholz/nvim-lastplace
+
 简介：自动记忆当前文件位置，在下次打开时定位到上次位置。
+
 使用方式：配置即用
 
 配置：
@@ -355,7 +375,9 @@ keymap["ohd"] = { "<cmd>lua require('harpoon.mark').rm_file()<cr>", "Remove File
 推荐度：★★★
 
 主页：https://github.com/folke/todo-comments.nvim
+
 简介：高亮注释中的关键词，按需安装。
+
 使用方式：在注释中以以下关键词，并加上英文冒号，然后输入注释内容。
 - `HACK`
 - `NOTE`
@@ -382,7 +404,9 @@ keymap["ohd"] = { "<cmd>lua require('harpoon.mark').rm_file()<cr>", "Remove File
 推荐度：★★★★★
 
 主页：https://github.com/kylechui/nvim-surround
+
 简介：使用快捷键配合textobjects快速地添加/修改/删除各种包括符，如()、[]、{}、<>等。
+
 使用方式：快捷键使用，下面举几个例子：
 - `ysiw"`：将当前光标选中的单词用双引号包围，其中，`ys`是本插件的触发快捷键，`iw`是inner word的意思，这是neovim自带的一种textobject选中方式。
 - `ds)`：将当前光标位置相邻的最内层的小括号删除。
@@ -404,7 +428,9 @@ keymap["ohd"] = { "<cmd>lua require('harpoon.mark').rm_file()<cr>", "Remove File
 推荐度：★★★★
 
 主页：https://github.com/nvim-pack/nvim-spectre
+
 简介：搜索并替换项目中所有文件/当前文件/当前选中区域的内容
+
 使用方式：快捷键使用
 1. 在文件窗口中
 - `<leader>osf`：在当前文件搜索
@@ -445,7 +471,9 @@ keymap["osf"] = { "viw<cmd>lua require('spectre').open_file_search()<CR>", "Spec
 推荐度：★★★★
 
 主页：https://github.com/kevinhwang91/nvim-bqf
+
 简介：增强你的quickfix窗口
+
 使用方式：配置即可显示增强的quickfix窗口，然后在quickfix窗口内使用对应快捷键操作quickfix
 - `z,`：将预览窗口的切换为全屏/半屏
 - `o`：将当前quickfix条目以drop的方式（如果缓冲区没有就打开新缓冲区，如果有就切换到那个缓冲）
@@ -506,7 +534,9 @@ keymap["osf"] = { "viw<cmd>lua require('spectre').open_file_search()<CR>", "Spec
 推荐度：★★★
 
 主页：https://github.com/andymass/vim-matchup
+
 简介：在你光标位置将if..else if..else等语言内的对应标签高亮。扩展你的`%`键能力。
+
 使用方式：配置即用，在if等可以配对的标签处点击`%`跳到下一个匹配处
 
 配置：
@@ -527,7 +557,9 @@ keymap["osf"] = { "viw<cmd>lua require('spectre').open_file_search()<CR>", "Spec
 推荐度：★★★★★
 
 主页：https://github.com/folke/persistence.nvim
+
 简介：自动保存你的session到文件中，在下次打开相同目录/项目时，你可以手动加载session恢复之前的工作状态。
+
 使用方式：退出即自动保存，打开后使用`<leader>a`来加载session
 
 配置：
@@ -560,7 +592,9 @@ keymap["SQ"] = { "<cmd>lua require('persistence').stop()<cr>", "Quit without sav
 推荐度：★★★★★
 
 主页：https://github.com/max397574/better-escape.nvim
+
 简介：可以自定义任意2个按键来退出Insert模式。
+
 使用方式：在Insert模式下，在200ms（可修改）内连续按下"jk"或"jl"（可修改）退出Insert模式。
 
 注：如果电脑比较卡，200ms可能不够，可以修改为更长一些的时间。
@@ -586,7 +620,9 @@ keymap["SQ"] = { "<cmd>lua require('persistence').stop()<cr>", "Quit without sav
 推荐度：★★★
 
 主页：https://github.com/abecodes/tabout.nvim
+
 简介：可以在Insert模式下，按`<Tab>`跳出括号。
+
 使用方式：在Insert模式下，如果你的光标在括号或引号里面（可配置），按`<Tab>`键跳出括号
 注：实际使用时，因为优先级比nvim-cmp低，所以在弹出补全窗口时，需要按`<C-e>`关闭补全窗口才能使用，所以体验并不是特别好。
 
@@ -633,7 +669,9 @@ keymap["SQ"] = { "<cmd>lua require('persistence').stop()<cr>", "Quit without sav
 推荐度：★★
 
 主页：https://github.com/ibhagwan/smartyank.nvim
+
 简介：在"dd"等不希望将内容复制到系统剪贴板的时候不复制到系统剪贴板。支持在SSH等情况复制到系统剪贴板。
+
 使用方式：配置即用。
 注：可能是因为个人环境问题，没有实际体验到它的功能，但对性能没啥影响，还是装上吧。
 
@@ -653,7 +691,9 @@ keymap["SQ"] = { "<cmd>lua require('persistence').stop()<cr>", "Quit without sav
 推荐度：★★★★★
 
 主页：https://github.com/chentoast/marks.nvim
+
 简介：在左侧栏中显示这一行标记的marks，可以显示当前文件/所有缓冲区的所有marks/所有缓冲区的大写marks
+
 使用方式：
 - `mx`：neovim原本的mark方式进行标记，x为标记名。
 - `m;`：自动对当前行按字母顺序进行小写标记
@@ -707,7 +747,9 @@ keymap["omg"] = { "<cmd>MarksListGlobal<CR>", "Show Marks Global" }
 推荐度：★★★★★
 
 主页：https://github.com/zbirenbaum/neodim
+
 简介：将没有使用到的变量进行暗淡处理。
+
 使用方式：配置即用
 
 配置：
@@ -738,7 +780,9 @@ keymap["omg"] = { "<cmd>MarksListGlobal<CR>", "Show Marks Global" }
 推荐度：★★★★★
 
 主页：https://github.com/anuvyklack/windows.nvim
+
 简介：通过几个函数可以将当前neovim窗口进行全屏/垂直全屏/水平全屏/等分
+
 使用方式：快捷键使用
 
 配置：
@@ -788,7 +832,9 @@ keymap["ze"] = { "<cmd>WindowsEqualize<cr>", "Window Equalize" }
 推荐度：★★★★★
 
 主页：https://github.com/rcarriga/nvim-notify
+
 简介：将各种提示显示为弹窗
+
 使用方式：配置即用
 - `<leader>onm`：显示messages（非noice功能）
 
@@ -828,11 +874,13 @@ keymap["ze"] = { "<cmd>WindowsEqualize<cr>", "Window Equalize" }
 推荐度：★★★★★
 
 主页：https://github.com/folke/noice.nvim
+
 简介：一个覆写了很多neovim原本UI的插件，很大幅度地提升了美观性。
 - 将messages重定向到notify
 - 将搜索、命令显示为独立的命令框，并去除最底部的显示栏，节省空间。
 - 显示过往Notifications
 - Telescope整合
+
 使用方式：配置即用，快捷键呼出历史窗口等功能。
 - `<leader>onn`：显示Notifications历史
 - `<leader>ont`：在Telescope中显示Notifications历史
@@ -890,7 +938,9 @@ keymap["one"] = { "<cmd>NoiceEnable<cr>", "Noice Enable" }
 推荐度：★★★
 
 主页：https://github.com/kevinhwang91/nvim-ufo
+
 简介：启用neovim的折叠功能，在左侧栏显示可折叠的项目，并能够自定义折叠显示的内容
+
 使用方式：快捷键使用
 - `zm`：折叠整个文件的所有内容
 - `zM`：同上
@@ -978,7 +1028,9 @@ keymap["one"] = { "<cmd>NoiceEnable<cr>", "Noice Enable" }
 推荐度：★★★★
 
 主页：https://github.com/s1n7ax/nvim-window-picker
+
 简介：在打开的多个窗口快速跳转、交换。
+
 使用方式：
 - 键入`,w`，然后键入1个小写字母键选择窗口，跳转到对应窗口。
 - 键入`,W`，然后键入1个小写字母键选择窗口，将当前焦点窗口与对应窗口交换。
@@ -1031,7 +1083,9 @@ keymap["one"] = { "<cmd>NoiceEnable<cr>", "Noice Enable" }
 推荐度：★★★★★
 
 主页：https://github.com/simrat39/symbols-outline.nvim
+
 简介：以右侧栏形式显示当前文件的大纲、标题、符号
+
 使用方式：快捷键打开侧栏
 - `<leader>oo`：打开symbols-outline侧边栏
 在侧栏的快捷键：
@@ -1128,7 +1182,9 @@ keymap["one"] = { "<cmd>NoiceEnable<cr>", "Noice Enable" }
 推荐度：★★★★
 
 主页：https://github.com/nvim-zh/colorful-winsep.nvim
+
 简介：打开多窗口时，在当前焦点窗口周围显示紫色的边框
+
 使用方式：配置即用
 
 配置：
@@ -1147,7 +1203,9 @@ keymap["one"] = { "<cmd>NoiceEnable<cr>", "Noice Enable" }
 推荐度：★★★★
 
 主页：https://github.com/booperlv/nvim-gomove
+
 简介：通过快捷键将当前选中区域/当前行进行移动，并遵循缩进
+
 使用方式：
 1. Normal模式：
 - `<M-h/l>`：向左/右移动当前光标处的字符
@@ -1189,46 +1247,14 @@ keymap["one"] = { "<cmd>NoiceEnable<cr>", "Noice Enable" }
 }
 ```
 
-
-配置：
-```lua
-{
-    "booperlv/nvim-gomove",
-    lazy = true,
-    event = { "User FileOpened" },
-    config = function()
-        require("gomove").setup({
-            map_defaults = false,
-            reindent = true,
-            undojoin = true,
-            move_past_end_col = false,
-        })
-
-        local map = vim.api.nvim_set_keymap
-        map("n", "<M-h>", "<Plug>GoNSMLeft", { noremap = true, silent = true })
-        map("n", "<M-j>", "<Plug>GoNSMDown", { noremap = true, silent = true })
-        map("n", "<M-k>", "<Plug>GoNSMUp", { noremap = true, silent = true })
-        map("n", "<M-l>", "<Plug>GoNSMRight", { noremap = true, silent = true })
-
-        map("x", "<M-h>", "<Plug>GoVSMLeft", { noremap = true, silent = true })
-        map("x", "<M-j>", "<Plug>GoVSMDown", { noremap = true, silent = true })
-        map("x", "<M-k>", "<Plug>GoVSMUp", { noremap = true, silent = true })
-        map("x", "<M-l>", "<Plug>GoVSMRight", { noremap = true, silent = true })
-
-        map("x", "<C-h>", "<Plug>GoVSDLeft", { noremap = true, silent = true })
-        map("x", "<C-j>", "<Plug>GoVSDDown", { noremap = true, silent = true })
-        map("x", "<C-k>", "<Plug>GoVSDUp", { noremap = true, silent = true })
-        map("x", "<C-l>", "<Plug>GoVSDRight", { noremap = true, silent = true })
-    end,
-}
-```
-
 ## 2.31 search-replace.nvim
 推荐度：★★★★★
 
 主页：https://github.com/roobert/search-replace.nvim
+
 简介：受够了手动输入`:%s/xxx/ccc/gcI`吗？这款插件可以使用快捷键一键帮你输入这些内容。
     这款插件是spectre插件的补充，你可以用这款插件或者spectre插件来达到全局文件替换的效果。
+
 使用方式：快捷键使用
 1. 当前缓冲区：
 - `<leader>rs`：打开选择列表（个人不会用）
@@ -1301,7 +1327,9 @@ vim.o.inccommand = "split"
 推荐度：★★★★
 
 主页：https://github.com/LeonHeidelbach/trailblazer.nvim
+
 简介：一款很强大的临时轨迹标记插件，它可以使用快捷键保存你当前的位置，然后安心地把光标移到其它地方，之后再按快捷键按顺序跳回原来记录的位置。
+
 使用方式：快捷键使用。
 - `<A-s>`：在当前行保存轨迹坐标
 - `<A-d>`：回到上一个保存的轨迹坐标，并删除该坐标
@@ -1380,7 +1408,9 @@ vim.o.inccommand = "split"
 推荐度：★★★★★
 
 主页：https://github.com/chrisgrieser/nvim-recorder
+
 简介：大幅简化和增强neovim自身的宏功能。允许你编辑、复制宏的内容以及设置断点
+
 使用方法：快捷键使用
 - `q`：开始/结束录制宏
 - `Q`：执行当前选择的宏
@@ -1416,7 +1446,9 @@ vim.o.inccommand = "split"
 推荐度：★★★★
 
 主页：https://github.com/chrisgrieser/nvim-various-textobjs
+
 简介：为neovim新增很多textobjects，它们可以丰富你的快捷键选中、复制、修改等操作的体验。
+
 使用方式：快捷键使用（以选中功能"v"来举例，可以替换为"c"（删除并修改）、"d"（删除）、"y"复制等）（`i`可以替换为`a`，`i`表示"inner"，`a`表示"outer"，如`va}`会选中包括`}`本身的内容，而`vi}`则不会）
 - `viS`：选中当前光标下的子word（如`VimEnter`，我们使用`viw`会选中整个`VimEnter`，但`viS`只会选中`Enter`或`Vim`）
 - `vii`：选中当前相同缩进的所有行
@@ -1464,7 +1496,9 @@ vim.o.inccommand = "split"
 推荐度：★★★★
 
 主页：https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+
 简介：基于nvim-treesitter的textobjects，可以帮你选中class、function等语法内容
+
 使用方式：快捷键使用，类似于nvim-various-textobjs（以选中模式`v`举例）
 1. 选择
 - `vaf`：选中当前函数
@@ -1595,7 +1629,9 @@ vim.o.inccommand = "split"
 推荐度：★★★
 
 主页：https://github.com/RRethy/nvim-treesitter-textsubjects
+
 简介：根据光标位置自动决定要选中什么textobject
+
 使用方式：快捷键使用（以v选中模式举例）
 - `v.`：根据光标位置，智能选择
 - `v,`：选中上一次选中的范围
