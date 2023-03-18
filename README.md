@@ -1725,6 +1725,24 @@ LunarVim自带的代码补全其实已经足够大部分场景下使用了，但
     lazy = true,
 },
 ```
+
+对于`cmp-under-comparator`，使用快捷键`<leader>Lf`打开cmp.lua，
+然后在`lvim.builtin.cmp`中加入一项：
+```lua
+sorting = {
+  comparators = {
+    cmp.config.compare.offset,
+    cmp.config.compare.exact,
+    cmp.config.compare.score,
+    require("cmp-under-comparator").under,
+    cmp.config.compare.kind,
+    cmp.config.compare.sort_text,
+    cmp.config.compare.length,
+    cmp.config.compare.order,
+  },
+},
+```
+
 ## 3.4 主题推荐
 推荐主题：OceanicNext
 
