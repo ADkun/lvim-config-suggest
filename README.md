@@ -1271,6 +1271,7 @@ keymap["one"] = { "<cmd>NoiceEnable<cr>", "Noice Enable" }
     lazy = true,
     cmd = {
         "SearchReplaceSingleBufferVisualSelection",
+        "SearchReplaceSingleBufferOpen",
         "SearchReplaceWithinVisualSelection",
         "SearchReplaceWithinVisualSelectionCWord",
         "SearchReplaceSingleBufferSelections",
