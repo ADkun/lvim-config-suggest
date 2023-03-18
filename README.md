@@ -1706,3 +1706,22 @@ linters.setup({
 	-- },
 })
 ```
+
+## 3.3 代码补全
+LunarVim自带的代码补全其实已经足够大部分场景下使用了，但是我们还可以安装一些补充插件。
+
+```lua
+{ "lukas-reineke/cmp-under-comparator", lazy = true },
+{
+    "f3fora/cmp-spell",
+    lazy = true,
+    config = function()
+      vim.opt.spell = true
+      vim.opt.spelllang:append "en_us"
+    end,
+},
+{
+    "ray-x/cmp-treesitter",
+    lazy = true,
+},
+```
