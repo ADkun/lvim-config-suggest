@@ -1725,3 +1725,17 @@ LunarVim自带的代码补全其实已经足够大部分场景下使用了，但
     lazy = true,
 },
 ```
+## 3.4 主题推荐
+推荐主题：OceanicNext
+
+```lua
+{
+    "mhartington/oceanic-next",
+    priority = 1000,
+    lazy = lvim.colorscheme ~= "OceanicNext",
+},
+```
+在config.lua中添加这一行作为lvim的主题：
+```lua
+lvim.colorscheme = "OceanicNext"
+```
