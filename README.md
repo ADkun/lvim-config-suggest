@@ -1629,3 +1629,44 @@ vim.o.inccommand = "split"
 ```
 
 # 3 其它配置
+## 3.1 snip
+在`~/.config/lvim`下创建一个`snippets`目录，然后在里面创建一个`package.json`，配置好指定格式的内容，之后编辑对应的json文件就可以为对应的文件类型添加snippets了
+
+参照 https://github.com/ADkun/my-lvim-config 的`snippets`目录
+
+## 3.2 formatter和linter
+在Mason插件中下载的formatter和linter，需要我们手动将它们对应到文件类型上。
+以下是我的配置项，可以参考配置。
+
+```lua
+-- -- linters and formatters <https://www.lunarvim.org/docs/languages#lintingformatting>
+local formatters = require("lvim.lsp.null-ls.formatters")
+formatters.setup({
+	{ command = "stylua" },
+	{
+		command = "black",
+		filetypes = { "python" },
+	},
+	{
+		command = "prettier",
+		extra_args = { "--print-width", "100" },
+		filetypes = { "typescript", "typescriptreact" },
+	},
+})
+local linters = require("lvim.lsp.null-ls.linters")
+linters.setup({
+	{ command = "flake8", filetypes = { "python" } },
+	{
+		command = "shellcheck",
+		args = { "--severity", "warning" },
+	},
+	{
+		command = "luacheck",
+		filetypes = { "lua" },
+	},
+	-- {
+	-- 	command = "cpplint",
+	-- 	filetypes = { "cpp", "c" },
+	-- },
+})
+```
