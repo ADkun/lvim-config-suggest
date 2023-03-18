@@ -13,7 +13,7 @@ Neovim版本: 0.9.0
 你可以在 https://github.com/ADkun/my-lvim-config/blob/main/config.lua 这个网址看到我最新的config.lua完整配置文件。
 
 ## 1.2 本文更好的阅读方式
-**请访问 https://github.com/ADkun/lvim-config-suggest 以更好的格式化方式查看本文**
+**请访问 https://github.com/ADkun/lvim-config-suggest/blob/main/README.md 以更好的格式化方式查看本文**
 
 # 2 插件
 ## 2.0 预配置
