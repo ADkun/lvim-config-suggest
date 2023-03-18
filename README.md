@@ -883,6 +883,8 @@ keymap["ze"] = { "<cmd>WindowsEqualize<cr>", "Window Equalize" }
 - `<leader>ond`：临时禁用Noice
 - `<leader>one`：启用Noice
 
+注：配置里关闭了`lsp.progress`功能，因为这个功能会影响性能。
+
 配置：
 ```lua
 {
@@ -1753,3 +1755,51 @@ sorting = {
 ```lua
 lvim.colorscheme = "OceanicNext"
 ```
+
+# 4 常见问题
+## 4.1 很多地方都是空白或者不能显示的字符怎么办
+这是因为没有安装`Nerd-Font`，这是一系列包含了很多图标的字体，可以到 [Nerd-Font官网](https://www.nerdfonts.com/font-downloads) 下载。
+
+个人推荐`JetBrainsMono Nerd Font`：[JetBrainsMono Nerd Font下载地址](https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/JetBrainsMono.zip)
+
+本人是在Windows10下使用WSL来使用Neovim的，因此这里给出Win10安装Nerd Font的方法。
+
+> Windows Nerd Font安装方法
+
+1. 下载Nerd Font
+2. 解压
+3. 全选字体文件
+4. 右键单击
+5. 点击“安装”
+6. 在你的终端设置使用该字体（我的是MobaXTerm，在Settings->Configurations->Terminal->Default Terminal font settings）
+
+## 4.2 配置了插件以后，感觉很卡怎么办
+`<leader>pi`打开lazy.nvim插件管理器的插件列表，然后按`P`进入`Profile`界面，然后按`<C-s>`按时间排序，
+可以看到哪些插件使用的时间最多，考虑将这个插件卸载或使用更合理的lazy加载时机。
+一般来说，如果按本文的给出的配置进行设置，不会出现特别卡顿的情况，除非电脑的配置太差，这时候可以考虑卸载一部分对性能影响很大的插件。
+
+已知的影响性能的插件有：numb.nvim，range-highlight。这两个插件都是在命令模式下（`:`），跳转到指定的行，并对其进行高亮的插件，这两个会导致在noice窗口中输入命令有很大的延迟。
+
+## 4.3 我的语言代码没有自动补全怎么办
+Neovim的代码补全依赖于LSP（语言服务器），LunarVim中以`mason.nvim`来下载和管理各个语言的LSP服务器。
+按`<leader>lI`进入mason界面，里面列出了所有可用的LSP、DAP、Linter、Formatter，你可以按1-5来筛选哪一种类型。
+- 2 LSP：语言服务器，用于代码高亮、跳转等功能。
+- 3 DAP：调试适配器，用于代码实时调试，需要自己配置。
+- 4 Linter：代码检查器，用于检查代码是否有错误，是否有需要优化的地方。
+- 5 Formatter：代码格式化器，用于将代码格式化为美观的格式。
+
+按`<C-f>`进入筛选界面，这个界面是一个Linux more方式的选择界面，按`d`或者`f`往下翻页，找到你想要的语言后，记住它对应的数字，翻到最底下以后输入你刚刚记住的数字即可筛选想要的语言。
+如果你翻过头了，就翻到最底下然后按q退出选择界面，重新按`<C-f>`来进入这个界面。
+在mason主界面按`<ESC>`来退出语言筛选状态。
+
+mason.nvim的更多快捷键，请在mason的主界面输入`g?`进入，再次输入可返回主界面。
+
+## 4.4 LunarVim是什么？
+LunarVim是一个开箱即用的Neovim发行版，它拥有很好的社区支持。
+
+作者尝试过不少neovim的发行版，LunarVim是最方便配置的，也是开箱后遇到的bug最少的，因此，本文选择在LunarVim的基础上进行修改配置。
+
+[LunarVim Github主页](https://github.com/LunarVim/LunarVim)
+[LunarVim 快捷键一览](https://www.lunarvim.org/zh-Hans/docs/keybind-overview)
+
+
