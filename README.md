@@ -597,7 +597,7 @@ keymap["osf"] = { "viw<cmd>lua require('spectre').open_file_search()<CR>", "Spec
     "kevinhwang91/nvim-bqf",
     -- quickfix preview and other functions
     lazy = true,
-    event = { "WinNew" },
+    ft = "qf",
     config = function()
         require("bqf").setup({
             auto_enable = true,
