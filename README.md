@@ -1870,6 +1870,79 @@ vim.o.inccommand = "split"
 },
 ```
 
+### 2.37 neoscroll.nvim
+
+推荐度：★★★
+
+主页：<https://github.com/karb94/neoscroll.nvim>
+
+简介：使滚动更加平滑。
+
+使用方式：配置即用。
+
+注：这里配置了cubic函数作为easing function，时间是50毫秒，平衡平滑度和效率之间的关系。如果觉得效果不好，可以自行调整。
+
+配置：
+
+```lua
+{
+    "karb94/neoscroll.nvim",
+    lazy = true,
+    -- event = "WinScrolled",
+    keys = { "<C-u>", "<C-d>", "<C-b>", "<C-f>", "<C-y>", "<C-e>", "zt", "zz", "zb" },
+    config = function()
+        require("neoscroll").setup({
+            -- All these keys will be mapped to their corresponding default scrolling animation
+            -- mappings = { "<C-u>", "<C-d>", "<C-b>", "<C-f>", "<C-y>", "<C-e>", "zt", "zz", "zb" },
+            hide_cursor = true,
+            stop_eof = true,
+            use_local_scrolloff = false,
+            respect_scrolloff = false,
+            cursor_scrolls_alone = true,
+            -- quadratic, cubic, quartic, quintic, circular, sine
+            easing_function = "cubic",
+            pre_hook = nil,
+            post_hook = nil,
+        })
+
+        local t = {}
+        t["<C-u>"] = { "scroll", { "-vim.wo.scroll", "true", "50", [['cubic']] } }
+        t["<C-d>"] = { "scroll", { "vim.wo.scroll", "true", "50", [['cubic']] } }
+        t["<C-b>"] = { "scroll", { "-vim.api.nvim_win_get_height(0)", "true", "50", [['cubic']] } }
+        t["<C-f>"] = { "scroll", { "vim.api.nvim_win_get_height(0)", "true", "50", [['cubic']] } }
+        t["<C-y>"] = { "scroll", { "-0.10", "false", "50", [['cubic']] } }
+        t["<C-e>"] = { "scroll", { "0.10", "false", "50", [['cubic']] } }
+        t["zt"] = { "zt", { "100", [['cubic']] } }
+        t["zz"] = { "zz", { "100", [['cubic']] } }
+        t["zb"] = { "zb", { "100", [['cubic']] } }
+
+        require("neoscroll.config").set_mappings(t)
+    end,
+}
+```
+
+### 2.38 vim-repeat
+
+推荐度：★★★
+
+主页：<https://github.com/tpope/vim-repeat>
+
+简介：让你的`.`更加强大，支持重复插件的操作。
+
+使用方式：安装即用。
+
+注：不清楚具体哪些插件支持这个。
+
+配置：
+
+```lua
+{
+    "tpope/vim-repeat",
+    lazy = true,
+    keys = ".",
+}
+```
+
 ## 3 其它配置
 
 ### 3.1 snip
