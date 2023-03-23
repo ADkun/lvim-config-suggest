@@ -100,7 +100,7 @@ local vkeymap = lvim.builtin.which_key.vmappings
 {
     "nathom/filetype.nvim",
     lazy = true,
-    event = "User FileOpened",
+    event = { "BufRead", "BufNewFile" },
     config = function()
         require("filetype").setup({
             overrides = {
@@ -804,7 +804,7 @@ keymap["SQ"] = { "<cmd>lua require('persistence').stop()<cr>", "Quit without sav
 {
     "ibhagwan/smartyank.nvim",
     lazy = true,
-    event = "User FileOpened",
+    event = { "BufRead", "BufNewFile" },
     config = function()
         require("smartyank").setup()
     end,
@@ -1037,7 +1037,7 @@ keymap["ze"] = { "<cmd>WindowsEqualize<cr>", "Window Equalize" }
     "folke/noice.nvim",
     enabled = ENABLE_NOICE,
     lazy = true,
-    event = "User FileOpened",
+    event = { "BufRead", "BufNewFile" },
     dependencies = { "rcarriga/nvim-notify", "MunifTanjim/nui.nvim" },
     config = function()
         require("noice").setup({
